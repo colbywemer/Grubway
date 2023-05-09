@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      .navbar-brand {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: rgba(0, 0, 0, 0.25);
+        width: 115px;
+      }
+      label {
+        margin-left: 10px;
+      }
+    </style>
+    <title>Grubway Store</title>
+  </head>
+  <header
+    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+  >
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3">Grubway</a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link px-3 active" href="/store">Store</a>
+    </div>
+    <div class="navbar-nav">
+      <a class="nav-link px-3" href="/orders">Orders</a>
+    </div>
+    <div class="navbar-nav">
+      <a class="nav-link px-3" href="/settings">Account Settings</a>
+    </div>
+    <div class="navbar-nav">
+      <a class="nav-link px-3" href="/cart">Cart</a>
+    </div>
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="/logout">Sign out</a>
+      </div>
+    </div>
+  </header>
+
+  <body class="text-center">
+    <form method="post" action="/filterStore">
+      <div
+        class="row"
+        style="margin: 1px; margin-top: 10px; margin-bottom: 10px"
+      >
+        <div class="form-floating col">
+          <select
+            class="form-control"
+            title="Select A Filter"
+            name="filter"
+            id="filter"
+          >
+            <option value="Name">Name</option>
+            <option value="Department">Department</option>
+          </select>
+          <label for="filter">Filter</label>
+        </div>
+        <div class="form-floating col">
+          <input type="text" class="form-control" id="keyword" name="keyword" />
+          <label for="keyword">Keyword</label>
+        </div>
+        <div class="form-floating col">
+          <input
+            class="w-100 btn btn-lg btn-primary"
+            name="submit"
+            type="submit"
+            value="Filter"
+            style="margin: 5px"
+          />
+        </div>
+        <div class="form-floating col">
+          <input
+            class="w-100 btn btn-lg btn-primary"
+            name="submit"
+            type="submit"
+            value="Clear Filter"
+            style="margin: 5px"
+          />
+        </div>
+      </div>
+    </form>
+
+    <table class="table text-center table-bordered caption-top">
+      <th>Name</th>
+      <th>Price</th>
+      <th>Department</th>
+      <th>Stock</th>
+      <th>Action</th>
+      {% for record in items %}
+      <form action="/addToCart" method="post">
+        <input type="hidden" name="itemId" value="{{record.id}}" />
+        <input type="hidden" name="itemName" value="{{record.name}}" />
+        <input type="hidden" name="itemPrice" value="{{record.price}}" />
+        <input type="hidden" name="isPerPound" value="{{record.isPerPound}}" />
+        <tr>
+          <td>{{ record.name }}</td>
+          {% if record.isPerPound == true %}
+          <td>${{"{:.2f}".format(record.price|float) }}/lb</td>
+          {% else %}
+          <td>${{"{:.2f}".format(record.price|float) }}</td>
+          {% endif %}
+
+          <td>{{ record.department }}</td>
+          <td>
+            {% if record.stock|int|float == record.stock %} {{ record.stock|int
+            }} {% else %} {{ record.stock}} {% endif %}
+          </td>
+          <td>
+            {% if record.isPerPound == true %}
+            <button
+              class="w-100 btn btn-lg btn-primary"
+              type="button"
+              onclick='
+    var weight = prompt("Please enter the weight in pounds:");
+    if (weight != null) {
+      document.getElementById("weight{{record.id}}").value = weight;
+      form.submit();
+    }
+  '
+            >
+              Add To Cart
+            </button>
+            {% else %}
+            <button class="w-100 btn btn-lg btn-primary" type="submit">
+              Add To Cart
+            </button>
+            {% endif %}
+            <input
+              type="number"
+              id="weight{{ record.id }}"
+              name="weight"
+              style="display: none"
+              value="1"
+            />
+          </td>
+        </tr>
+      </form>
+      {% endfor %}
+    </table>
+  </body>
+</html>

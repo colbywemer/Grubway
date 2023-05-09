@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InventoryScreen</class>
+ <widget class="QWidget" name="InventoryScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>InventoryScreen</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-style: solid;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+QPushButton:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+QPushButton:pressed {
+    background-color: #0062cc;
+    border-color: #005cbf;
+}</string>
+  </property>
+  <widget class="QTableWidget" name="inventoryTableWidget">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>12</y>
+     <width>871</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
+   <property name="columnCount">
+    <number>4</number>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <column/>
+   <column/>
+   <column/>
+   <column/>
+  </widget>
+  <widget class="QComboBox" name="itemFilter">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>270</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>91</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>91</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Id</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Department</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QSpinBox" name="filterItemId">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>270</y>
+     <width>125</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSpinBox{
+    border-radius: 5px;
+    }</string>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::NoButtons</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="filterItemName">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>270</y>
+     <width>125</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+    border-radius: 5px;
+    }</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="refreshButton">
+   <property name="geometry">
+    <rect>
+     <x>568</x>
+     <y>270</y>
+     <width>100</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Refresh List</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="itemFilterButton">
+   <property name="geometry">
+    <rect>
+     <x>464</x>
+     <y>270</y>
+     <width>100</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Filter</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="updateStockButton">
+   <property name="geometry">
+    <rect>
+     <x>672</x>
+     <y>270</y>
+     <width>100</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-style: solid;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+QPushButton:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+QPushButton:pressed {
+    background-color: #0062cc;
+    border-color: #005cbf;
+}</string>
+   </property>
+   <property name="text">
+    <string>Update Stock</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backButton">
+   <property name="geometry">
+    <rect>
+     <x>776</x>
+     <y>270</y>
+     <width>100</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>100</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>100</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-style: solid;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+QPushButton:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+QPushButton:pressed {
+    background-color: #0062cc;
+    border-color: #005cbf;
+}</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="filterItemDepartment">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>270</y>
+     <width>125</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>125</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>125</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Produce</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Wine And Spirits</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Deli</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Health And Beauty</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Meat</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>General</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dairy</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Frozen</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bakery</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>21</x>
+     <y>270</y>
+     <width>201</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="totalImportedLabel">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Total Imported: 0</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="totalSoldLabel">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>24</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Total Sold: 0</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

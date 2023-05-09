@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>404 Page Not Found</title>
+    <link
+      rel="icon"
+      href="{{url_for('static', filename='icon.png')}}"
+      type="image/png"
+    />
+  </head>
+  <style>
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <h1>This is not the page you're looking for.</h1>
+    <p>
+      It looks like you've strayed off course and ended up in a galaxy far, far
+      away. But don't worry, we'll use the power of the Force to guide you back
+      to the right path. In the meantime, why not take a break at the Mos Eisley
+      Cantina and enjoy some Blue Milk? Or better yet, reach out with the Force
+      and Force Crush the back button. It is your destiny! May the 404 be with
+      you!
+    </p>
+    <img src="{{ url_for('static', filename='error.png') }}" alt="404 Error" />
+  </body>
+</html>

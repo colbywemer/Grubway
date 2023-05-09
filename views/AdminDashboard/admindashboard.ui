@@ -1,0 +1,1542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminDashboard</class>
+ <widget class="QWidget" name="AdminDashboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1055</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1055</width>
+    <height>421</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1055</width>
+    <height>421</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Administrator/Manager Dashboard</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>1035</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Notice</string>
+    </attribute>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1011</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;!! &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Warning&lt;/span&gt;: You are now in the danger zone. Any changes you make here may be irreversible.&lt;br/&gt;&lt;br/&gt;By using this account, you agree that you, the user, are authorized to access this area. Any change made using this area is your responsibility, and you shall account for any damage that may &lt;/p&gt;&lt;p&gt;come as a result of accessing this area.&lt;br/&gt;&lt;br/&gt;If you are not authorized to view this area, please discontinue using this workstation and contact your supervisor &lt;span style=&quot; font-weight:700;&quot;&gt;IMMEDIATELY&lt;/span&gt;. Failure to comply will result in criminal prosecution to the &lt;/p&gt;&lt;p&gt;fullest extent under the law.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Employee User Management</string>
+    </attribute>
+    <widget class="QTableWidget" name="EmpAccountsTable">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1032</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget{
+    padding: 10px;
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>216</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+    <widget class="QPushButton" name="DelEmpUsrBtn">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Delete User</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="EditUsrBtn">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Edit User</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ResetPassBtn">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Reset Password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ViewEmpUsrBtn">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>View User</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CreateUsrBtn">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Create User</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="filterEmpRole">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Cashier</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Manager</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Administrator</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="empFilter">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Last Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Username</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Position</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="filterEmpText">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="filterEmpId">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="filterEmpButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RefreshEmpBtn">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Refresh List</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Customer Management</string>
+    </attribute>
+    <widget class="QTableWidget" name="CustAccountsTable">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1032</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget{
+    padding: 10px;
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>216</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+    <widget class="QPushButton" name="DelCustUsrBtn">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Delete Customer</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ViewCustUsrBtn">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>View Customer</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RefreshBtn">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Refresh List</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="custFilter">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Last Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Username</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QSpinBox" name="filterCustId">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="filterCustText">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="filterCustomerButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Order Management</string>
+    </attribute>
+    <widget class="QPushButton" name="ViewOrderBtn">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>View Order</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RefreshOrderBtn">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Refresh List</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DelOrderBtn">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Delete Order</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="OrdersTable">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1032</width>
+       <height>340</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget{
+    padding: 10px;
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="columnCount">
+      <number>4</number>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>160</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+    <widget class="QComboBox" name="filter">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Pickup Date</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Status</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="keyWordText">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="keyWordDate">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QDateEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="keywordSelect">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>ordered</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>prepared</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>complete</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="orderFilterButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="keywordId">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>Item Management</string>
+    </attribute>
+    <widget class="QPushButton" name="editItemButton">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Edit Item</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deleteItemButton">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Delete Item</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="createItemButton">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Create Item</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="ItemsTable">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1032</width>
+       <height>340</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget{
+    padding: 10px;
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="columnCount">
+      <number>5</number>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>128</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+    <widget class="QPushButton" name="inventoryButton">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Inventory</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="itemFilter">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Department</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QSpinBox" name="filterItemId">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="filterItemName">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="filterItemDepartment">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Produce</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Pharmacy</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Wine And Spirits</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Deli</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Health And Beauty</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Meat</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>General</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dairy</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Frozen</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bakery</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="itemFilterButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refreshItemsButton">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Refresh List</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Logs</string>
+    </attribute>
+    <widget class="QTableWidget" name="logsTable">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1032</width>
+       <height>340</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget{
+    padding: 10px;
+    border-radius: 5px;
+}</string>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::NoSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="cornerButtonEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>128</number>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>18</number>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>false</bool>
+     </attribute>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
+    <widget class="QPushButton" name="RefreshBtn_3">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Refresh List</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="logFilterButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>340</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Filter</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="filterLogType">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Account</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Order</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="logFilter">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+border: 0;
+}
+QComboBox{
+border-radius: 5px;
+padding: 5px;
+}
+QComboBox::drop-down { 
+	width: 0px; 
+}</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Date</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Username</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QDateEdit" name="logDate">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QDateEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::NoButtons</enum>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="logKeywordText">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>340</y>
+       <width>125</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit{
+    border-radius: 5px;
+    }</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>Account</string>
+    </attribute>
+    <widget class="QLabel" name="UsernameLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>1010</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Placeholder&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChgNameBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>1010</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 4px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Change Account Details</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChgPasswdBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>1010</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 4px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Change Account Password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="EndSessionBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>1010</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 4px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Logout</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChangeCodeBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>1010</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: white;
+    background-color: #0e67ed;
+    border-radius: 5px;
+    padding: 4px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Set Code</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
